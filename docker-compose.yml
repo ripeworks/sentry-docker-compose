@@ -1,0 +1,25 @@
+postgres:
+  image: postgres:latest
+  restart: always
+  ports:
+    - 5432:5432
+  environment:
+    - POSTGRES_USER=sentry
+    - POSTGRES_PASSWORD=''
+
+redis:
+  image: redis:latest
+  restart: always
+  ports:
+    - 6379:6379
+
+sentry:
+  image: sentry:latest
+  restart: always
+  ports:
+    - 8080:9000
+  links:
+    - postgres
+    - redis
+  environment:
+    - SENTRY_SECRET_KEY=''
