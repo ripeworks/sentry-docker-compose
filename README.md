@@ -8,3 +8,5 @@ $ docker-compose run --rm sentry upgrade
 $ docker-compose run sentry celery beat
 $ docker-compose run sentry celery worker
 ```
+
+Checkout the [Sentry Docker page](https://hub.docker.com/_/sentry/) for more `ENV` vars you can add.
