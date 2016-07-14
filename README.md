@@ -5,8 +5,8 @@ $ docker-compose up -d postgres
 $ docker-compose run --rm sentry generate-secret-key
 # Add output to SENTRY_SECRET_KEY in docker-compose.yml
 $ docker-compose run --rm sentry upgrade
-$ docker-compose run sentry celery beat
-$ docker-compose run sentry celery worker
+$ docker-compose run sentry run cron
+$ docker-compose run sentry run worker
 ```
 
 Checkout the [Sentry Docker page](https://hub.docker.com/_/sentry/) for more `ENV` vars you can add.
